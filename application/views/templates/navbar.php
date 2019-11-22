@@ -13,53 +13,7 @@
                 <a class="navbar-brand" href="#"><i class="fa fa-bar-chart"></i> Flat Admin</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa fa-comments"></i> 0</a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-title-bar">
-                            Notification ( 0 )
-                        </li>
-                        <li class="message">
-                            No new notification
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown notification-alert">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-exclamation-circle"></i> 3</a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-title-bar">
-                            Notification ( 3 )
-                        </li>
-                        <li>
-                            <ul class="notification-list">
-                                <li>
-                                    <a href="#">
-                                        <div class="noti-icon noti-alert">
-                                            <i class="fa fa-exclamation-circle fa-2x"></i>
-                                        </div>
-                                        <div class="noti-message">1 new registration</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="noti-icon noti-success">
-                                            <i class="fa fa-check fa-2x"></i>
-                                        </div>
-                                        <div class="noti-message">3 new orders</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="noti-icon noti-primary">
-                                            <i class="fa fa-comments fa-2x"></i>
-                                        </div>
-                                        <div class="noti-message">2 customers messages</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Emily Hart <span class="caret"></span></a>
                     <ul class="dropdown-menu user-info">
@@ -71,8 +25,8 @@
                                 <h4 class="user-name">Emily Hart</h4>
                                 <p>emily_hart@email.com</p>
                                 <div class="btn-group margin-bottom-2x" role="group">
-                                    <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Profile</button>
-                                    <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button>
+                                    <button type="button" class="btn btn-default"><i class="fa fa-user"></i> <a href="<?= site_url('profile') ?>">Profile</a></button>
+                                    <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> <a href="<?= site_url('logout') ?>">Logout</a></button>
                                 </div>
                             </div>
                         </li>

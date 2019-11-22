@@ -30,7 +30,7 @@
             <i class="fa fa-bars navicon"></i>
         </div>
         <ul class="menu">
-                        <li class="submenu">
+            <li class="submenu">
                 <a href="index.html">
                     <div>
                         <i class="menu-icon fa fa-th-large"></i>
@@ -201,12 +201,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
-                    <span class="page-title red"><h3>Form</h3></span>
+                    <span class="page-title red">
+                        <h3>Form</h3>
+                    </span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <span class="page-title"><h4>Form Example</h4></span>
+                    <span class="page-title">
+                        <h4>Form Example</h4>
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -269,7 +273,7 @@
                                 <div class="checkbox">
                                     <input type="checkbox" id="checkbox2">
                                     <label for="checkbox2">
-                                         Check me out
+                                        Check me out
                                     </label>
                                 </div>
                             </div>
@@ -285,7 +289,9 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <span class="page-title"><h4>Form Element</h4></span>
+                    <span class="page-title">
+                        <h4>Form Element</h4>
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -335,7 +341,7 @@
                                     <div class="checkbox">
                                         <input type="checkbox" id="checkboxSuccess" value="option1">
                                         <label for="checkboxSuccess">
-                                             Checkbox with success
+                                            Checkbox with success
                                         </label>
                                     </div>
                                 </div>
@@ -343,7 +349,7 @@
                                     <div class="checkbox">
                                         <input type="checkbox" id="checkboxWarning" value="option1">
                                         <label for="checkboxWarning">
-                                             Checkbox with warning
+                                            Checkbox with warning
                                         </label>
                                     </div>
                                 </div>
@@ -364,7 +370,9 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <span class="page-title"><h4>Advanced Element</h4></span>
+                    <span class="page-title">
+                        <h4>Advanced Element</h4>
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -440,7 +448,7 @@
         </div>
     </div>
     <footer class="footer">
-            <span><i class="fa fa-copyright"></i> Tui2Tone Labs, 2015</span>
+        <span><i class="fa fa-copyright"></i> Tui2Tone Labs, 2015</span>
     </footer>
 </body>
 
