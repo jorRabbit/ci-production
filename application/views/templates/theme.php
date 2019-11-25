@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/awesome-bootstrap-checkbox.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/bootstrap-datepicker3.min.css">
 
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
@@ -24,6 +25,7 @@
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/dataTables.bootstrap.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/main.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
 
 </head>
 

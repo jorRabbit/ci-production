@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class RequestController extends MY_Controller
+class EventController extends MY_Controller
 {
     function __construct()
     {
         parent::__construct();
         $this->loggedIn();
-        $this->load->model('Request');
+        $this->load->model('Event');
         $this->load->model('Flashdata', 'flash');
     }
 
@@ -16,40 +16,53 @@ class RequestController extends MY_Controller
         if ($q == '1') {
             return [
                 [
-                    'field' => 'ddateline',
-                    'label' => 'ddateline',
-                    'rules' => 'required|max_length[10]'
+                    'field' => 'kdevent',
+                    'label' => 'kdevent',
+                    'rules' => 'required|max_length[20]|is_unique[tb_event.kode_event]'
                 ],
 
                 [
-                    'field' => 'idevent',
-                    'label' => 'idevent',
+                    'field' => 'namaevent',
+                    'label' => 'namaevent',
+                    'rules' => 'required|max_length[60]|is_unique[tb_event.nama_event]'
+                ],
+
+                [
+                    'field' => 'dstartevent',
+                    'label' => 'dstartevent',
                     'rules' => 'required'
                 ],
 
                 [
-                    'field' => 'idevent',
-                    'label' => 'idevent',
+                    'field' => 'dendevent',
+                    'label' => 'dendevent',
                     'rules' => 'required'
                 ],
 
                 [
-                    'field' => 'keterangan',
-                    'label' => 'keterangan|max_length[250]',
+                    'field' => 'picevent',
+                    'label' => 'dcreated',
                     'rules' => 'required'
                 ],
 
-                [
-                    'field' => 'kdproduk[]',
-                    'label' => 'kdproduk',
-                    'rules' => 'required'
-                ],
             ];
         } elseif ($q == '2') {
             return [
                 [
-                    'field' => 'ddateline',
-                    'label' => 'ddateline',
+                    'field' => 'namaevent',
+                    'label' => 'namaevent',
+                    'rules' => 'required|max_length[60]|is_unique[tbu_level.nama_event]'
+                ],
+
+                [
+                    'field' => 'dstartevent',
+                    'label' => 'dstartevent',
+                    'rules' => 'required'
+                ],
+
+                [
+                    'field' => 'dendevent',
+                    'label' => 'dendevent',
                     'rules' => 'required'
                 ],
 
@@ -61,8 +74,8 @@ class RequestController extends MY_Controller
     {
         $dt = array(
             'grup'      => 'Hone', 'menu' => 'Home', 'sub' => 'View',
-            'data'      => $this->Request->view()->result(),
-            'content'    => 'request/view',
+            'data'      => $this->Event->view()->result(),
+            'content'    => 'event/view',
         );
 
         $this->theme($dt);
@@ -74,23 +87,18 @@ class RequestController extends MY_Controller
 
         if ($this->form_validation->run() === false) {
             $dt = array(
-                'grup'      => 'Request', 'menu' => 'Request', 'sub' => 'Add',
-                'kdproduk'   => $this->db->order_by('kode_produk', 'ASC')->get('tb_produk')->result(), // mengambil data dari tabel level urutkan dari nama level terkecil(ASC)
-                'namaproduk'   => $this->db->order_by('nama_produk', 'ASC')->get('tb_produk')->result(), // mengambil data dari tabel level urutkan dari nama level terkecil(ASC)
-                'idevent'   => $this->db->order_by('id_event', 'ASC')->get('tb_event')->result(), // mengambil data dari tabel level urutkan dari nama level terkecil(ASC)
-                'content'   => 'request/add',
+                'grup'      => 'Event', 'menu' => 'Event', 'sub' => 'Add',
+                'content'   => 'event/add',
             );
             $this->theme($dt);
         } else {
-            $add = $this->Request->add();
-            $id    = $this->db->insert_id();
-            $addchild = $this->Request->addchild($id);
-            if ($add && $addchild) {
+            $add = $this->Event->add();
+            if ($add) {
                 $this->session->set_flashdata('notif', $this->flash->successFlash());
-                redirect('request-add');
+                redirect('event-add');
             } else {
                 $this->session->set_flashdata('notif', $this->flash->failedFlash());
-                redirect('request-add');
+                redirect('event-add');
             }
         }
     }
@@ -101,33 +109,33 @@ class RequestController extends MY_Controller
 
         if ($this->form_validation->run() === false) {
             $dt = array(
-                'grup'      => 'Request', 'menu' => 'Request', 'sub' => 'Delete',
-                'data'        => $this->Request->find($id)->first_row(),
-                'content'    => 'request/edit',
+                'grup'      => 'Event', 'menu' => 'Event', 'sub' => 'Delete',
+                'data'        => $this->Event->find($id)->first_row(),
+                'content'    => 'event/edit',
             );
             $this->theme($dt);
         } else {
             // echo 'eksekusi';
-            $edit = $this->Request->update($id);
+            $edit = $this->Event->update($id);
             if ($edit) {
                 $this->session->set_flashdata('notif', $this->flash->successFlash());
-                redirect('request-edit/' . $id);
+                redirect('event-edit/' . $id);
             } else {
                 $this->session->set_flashdata('notif', $this->flash->failedFlash());
-                redirect('request-edit/' . $id);
+                redirect('event-edit/' . $id);
             }
         }
     }
 
     public function delete($id)
     {
-        $delete = $this->Request->delete($id);
+        $delete = $this->Event->delete($id);
         if ($delete) {
             $this->session->set_flashdata('notif', $this->flash->successFlash());
-            redirect('request');
+            redirect('event');
         } else {
             $this->session->set_flashdata('notif', $this->flash->failedFlash());
-            redirect('request');
+            redirect('event');
         }
     }
 }

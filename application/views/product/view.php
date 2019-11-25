@@ -1,24 +1,18 @@
 <div class="container-fluid">
-
     <?= $this->session->flashdata('notif'); ?>
     <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
             <div class="content-block">
                 <div class="block-title">
-                    <h4>DATA USER
-                        <a href="<?= site_url('user-add'); ?>" class=" btn btn-xs btn-info pull-right">Tambah Data</a></h4>
+                    <h4>DATA PRODUK<a href="<?= site_url('product-add'); ?>" class=" btn btn-xs btn-info pull-right">Tambah Data</h4></a>
                 </div>
-
                 <div class="block-content">
                     <table id="example" class="table table-striped" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
-                                <th>Nama Lengkap</th>
-                                <th>username</th>
-                                <th class="text-center">Level</th>
-                                <th>Aktif</th>
-                                <th>email</th>
+                                <th>Kode Produk</th>
+                                <th>Nama Produk</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -29,14 +23,11 @@
                                 $i++; ?>
                                 <tr>
                                     <td class="text-center"><?= $i; ?> </td>
-                                    <td><?= $dt->nama_lengkap; ?></td>
-                                    <td><?= $dt->username; ?></td>
-                                    <td class="text-center"><?= $dt->kode_level; ?></td>
-                                    <td><?= $dt->status_aktif; ?></td>
-                                    <td><?= $dt->email; ?></td>
+                                    <td><?= $dt->kode_produk ?></td>
+                                    <td><?= $dt->nama_produk; ?></td>
                                     <td>
-                                        <a href="<?= site_url('user-edit/' . $dt->id_user) ?> " class="btn btn-xs btn-warning">edit</a>
-                                        <a href="<?= site_url('user-delete/' . $dt->id_user) ?> " class="btn btn-xs btn-danger">delete</a>
+                                        <a href="<?= site_url('product-edit/' . $dt->id_produk) ?> " class="btn btn-xs btn-warning">edit</a>
+                                        <a href="<?= site_url('product-delete/' . $dt->id_produk) ?> " class="btn btn-xs btn-danger">delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

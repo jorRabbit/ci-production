@@ -1,16 +1,11 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12">
-            <span class="page-title red">
-                <h3>User</h3>
-            </span>
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="content-block">
-                <div class="block-title">Tambah User</div>
+                <div class="block-title">
+                    <h4>EDIT USER</h4>
+                </div>
                 <?= $this->session->flashdata('notif'); ?>
                 <?= form_open('user-edit/' . $data->id_user, 'class="form-vertical"') ?>
                 <div class="block-content">
@@ -19,23 +14,19 @@
                             <div class="form-group">
                                 <label for="namalengkap">Nama Lengkap</label>
                                 <input type="text" class="form-control" id="namalengkap" name="namalengkap" placeholder="Masukan Nama Lengkap" value="<?= $data->nama_lengkap; ?>">
-                                <div class="col-sm-6 text-danger">
-                                    <i> <?= form_error('namalengkap'); ?></i>
-                                </div>
+                                <i> <?= form_error('namalengkap', '<small class="text-danger pl-3">', '</small>'); ?></i>
                             </div>
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Masukan Username" value="<?= $data->username; ?>" readonly>
-                                <div class="col-sm-3 text-danger">
-                                    <i> <?= form_error('username'); ?></i>
-                                </div>
+
+                                <i> <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?></i>
+
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Masukan email" value="<?= $data->email; ?>" readonly>
-                                <div class="col-sm-6 text-danger">
-                                    <i> <?= form_error('email'); ?></i>
-                                </div>
+                                <i> <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?></i>
                             </div>
                         </div>
 
@@ -58,9 +49,7 @@
                                     <?php endif; ?>
 
                                 </select>
-                                <div class="col-sm-6 text-danger">
-                                    <i> <?= form_error('status'); ?></i>
-                                </div>
+                                <i> <?= form_error('status', '<small class="text-danger pl-3">', '</small>'); ?></i>
                             </div>
 
                             <div class="form-group">
@@ -84,9 +73,7 @@
                                     }
                                     ?>
                                 </select>
-                                <div class="col-sm-6 text-danger">
-                                    <i> <?= form_error('level'); ?></i>
-                                </div>
+                                <i> <?= form_error('level', '<small class="text-danger pl-3">', '</small>'); ?></i>
                             </div>
 
                             <div class="form-group">

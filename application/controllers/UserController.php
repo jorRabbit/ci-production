@@ -117,9 +117,9 @@ class UserController extends MY_Controller
         if ($this->form_validation->run() === false) {
             $dt = array(
                 'grup'      => 'User', 'menu' => 'User', 'sub' => 'Delete',
-                'data'        => $this->User->find($id)->first_row(),
+                'data'      => $this->User->find($id)->first_row(),
                 'level'     => $this->db->order_by('nama_level', 'ASC')->get('tbu_level')->result(), // mengambil data dari tabel level urutkan dari nama level terkecil(ASC)
-                'content'    => 'user/edit',
+                'content'   => 'user/edit',
             );
             $this->theme($dt);
         } else {
