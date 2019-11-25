@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="menu-control toggle-sidebar">
-        <a class="navbar-brand" href="#"><i class="fa fa-bar-chart"></i> Flat Admin</a>
+        <a class="navbar-brand" href="#"><i class="fa fa-bar-chart"></i> AMS | PROD</a>
         <i class="fa fa-bars navicon"></i>
     </div>
 
@@ -38,53 +38,27 @@
             </a>
         </li>
 
-        <li class="submenu dropdown">
-            <a href="<?= site_url('request'); ?>" class="dropdown-toggle" data-toggle="dropdown">
-
+        <li class="submenu">
+            <a href="<?= site_url('event'); ?>">
                 <div>
-                    <i class="menu-icon fa fa-slack"></i>
-                    <span class="menu-title">Request</span>
+                    <i class="menu-icon fa fa-file-text-o"></i>
+                    <span class="menu-title">Event</span>
                 </div>
             </a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="<?= site_url('product-add'); ?>">
-                        <div>
-                            <i class="menu-icon fa fa-sign-in"></i>
-                            <span class="menu-sub-title">Prod</span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= site_url('event'); ?>">
-                        <div>
-                            <i class="menu-icon fa fa-pencil-square-o"></i>
-                            <span class="menu-sub-title">Event</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
         </li>
-        <li class="submenu dropdown">
-            <a href="<?= site_url('diskusi'); ?>" class="dropdown-toggle" data-toggle="dropdown">
 
+        <li class="submenu">
+            <a href="<?= site_url('diskusi'); ?>">
                 <div>
-                    <i class="menu-icon fa fa-magic"></i>
-                    <span class="menu-title">Forum</span>
+                    <i class="menu-icon fa fa-file-text-o"></i>
+                    <span class="menu-title">Forum Diskusi</span>
                 </div>
             </a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="custom-dashboard.html">
-                        <div>
-                            <i class="menu-icon fa fa-bar-chart"></i>
-                            <span class="menu-sub-title">Diskusi</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
         </li>
-        <hr class="sidebar-divider">
+        <br>
+        <br>
+        <br>
+        <br>
         <li class="submenu">
             <a href="<?= site_url('logout'); ?>">
                 <div>

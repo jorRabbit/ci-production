@@ -33,6 +33,11 @@ $route['product-add']              = 'ProductController/add';
 $route['product-edit/(:num)']      = 'ProductController/edit/$1';
 $route['product-delete/(:num)']    = 'ProductController/delete/$1';
 
+$route['diskusi']                  = 'DiskusiController/index';
+$route['diskusi-add']              = 'DiskusiController/add';
+$route['diskusi-edit/(:num)']      = 'DiskusiController/edit/$1';
+$route['diskusi-delete/(:num)']    = 'DiskusiController/delete/$1';
+
 
 $route['default_controller']    = 'AuthController';
 $route['404_override']          = '';
