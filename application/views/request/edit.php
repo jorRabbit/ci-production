@@ -7,7 +7,7 @@
                     <h4>REQUEST</h4>
                 </div>
                 <?= $this->session->flashdata('notif'); ?>
-                <?= form_open('request-add', 'class="form-vertical"') ?>
+                <?= form_open('request-edit', 'class="form-vertical"') ?>
                 <div class="block-content">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -16,7 +16,7 @@
                                 <select class="form-control" name="idevent" id="idevent">
                                     <?php
                                     foreach ($idevent as $idevent) {
-                                        if ($idevent->id_event == set_value('idevent')) {
+                                        if ($idevent->id_event == $data->id_event) {
                                             ?>
                                             <option value="<?php echo $idevent->id_event; ?>" selected>
                                                 <?php echo $idevent->kode_event; ?>
@@ -48,12 +48,12 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" class="form-control datepicker" name="ddateline" data-date-format="dd-mm-yyyy" required="required" value="<?= set_value('ddateline') ?>">
+                                    <input type="text" class="form-control datepicker" name="ddateline" data-date-format="dd-mm-yyyy" required="required" value="<?= date('d-m-Y', strtotime($data->date_dateline)); ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="keterangan">Keterangan</label>
-                                <input type="text" class="form-control" id="keterangan" name="keterangan" value="<?= set_value('keterangan') ?>">
+                                <input type="text" class="form-control" id="keterangan" name="keterangan" value="<?= $data->keterangan ?>">
                             </div>
                         </div>
                     </div>
@@ -65,24 +65,23 @@
                             <table id="example" class="table table-striped" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th class="text-center"></th>
+
                                         <th>Kode Produk</th>
                                         <th>Nama Produk</th>
+                                        <th class="text-center"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                     $i = '';
-                                    foreach ($kdproduk as $kdproduk) :
+                                    foreach ($datachild as $kdproduk) :
                                         $i++; ?>
                                         <tr>
-                                            <td class="text-center">
-                                                <label>
-                                                    <input name="kdproduk[]" value="1" class="ace ace-checkbox-2" type="checkbox" <?php if (set_value('kdproduk[]')) echo 'checked' ?> />
-                                                </label>
-                                            </td>
                                             <td><?= $kdproduk->kode_produk ?></td>
                                             <td><?= $kdproduk->nama_produk; ?></td>
+                                            <td>
+                                                <a href="<?= site_url('request-child-delete/' . $kdproduk->id_request_child) ?> " class="btn btn-xs btn-danger">delete</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>

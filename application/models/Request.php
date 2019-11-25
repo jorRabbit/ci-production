@@ -4,13 +4,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Request extends CI_Model
 {
     public $_tb  = "tb_request";
+    public $_tbc = "tb_request_child";
 
     function view()
     {
         $this->db->join('tb_event', 'tb_request.id_event = tb_event.id_event');
+        $this->db->order_by('date_dateline', 'ASC');
         return $this->db->get($this->_tb);
     }
 
+    function viewchild($id)
+    {
+        $this->db->join('tb_produk', 'tb_request_child.kode_produk = tb_produk.kode_produk');
+        $this->db->order_by('id_request_child', 'ASC');
+        return $this->db->get_where('tb_request_child', array('id_request' => $id));
+    }
 
     function add()
     {
@@ -63,5 +71,10 @@ class Request extends CI_Model
     {
         $this->db->where('id_request', $id);
         return $this->db->delete($this->_tb);
+    }
+    function deletechild($id)
+    {
+        $this->db->where('id_request_child', $id);
+        return $this->db->delete($this->_tbc);
     }
 }

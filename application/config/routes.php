@@ -26,6 +26,8 @@ $route['request-add']              = 'RequestController/add';
 $route['request-edit/(:num)']      = 'RequestController/edit/$1';
 $route['request-delete/(:num)']    = 'RequestController/delete/$1';
 
+$route['request-child-delete/(:num)']    = 'RequestController/deletechild/$1';
+
 $route['product']                  = 'ProductController/index';
 $route['product-add']              = 'ProductController/add';
 $route['product-edit/(:num)']      = 'ProductController/edit/$1';

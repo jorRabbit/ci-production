@@ -103,6 +103,8 @@ class RequestController extends MY_Controller
             $dt = array(
                 'grup'      => 'Request', 'menu' => 'Request', 'sub' => 'Delete',
                 'data'        => $this->Request->find($id)->first_row(),
+                'idevent'   => $this->db->order_by('id_event', 'ASC')->get('tb_event')->result(), // mengambil data dari tabel level urutkan dari nama level terkecil(ASC)
+                'datachild' => $this->Request->viewchild($id)->result(),
                 'content'    => 'request/edit',
             );
             $this->theme($dt);
@@ -128,6 +130,18 @@ class RequestController extends MY_Controller
         } else {
             $this->session->set_flashdata('notif', $this->flash->failedFlash());
             redirect('request');
+        }
+    }
+
+    public function deletechild($id)
+    {
+        $delete = $this->Request->deletechild($id);
+        if ($delete) {
+            $this->session->set_flashdata('notif', $this->flash->successFlash());
+            redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            $this->session->set_flashdata('notif', $this->flash->failedFlash());
+            redirect($_SERVER['HTTP_REFERER']);
         }
     }
 }

@@ -78,7 +78,7 @@
                                         <tr>
                                             <td class="text-center">
                                                 <label>
-                                                    <input name="kdproduk[]" value="1" class="ace ace-checkbox-2" type="checkbox" <?php if (set_value('kdproduk[]')) echo 'checked' ?> />
+                                                    <input name="kdproduk[]" value="<?= $kdproduk->kode_produk ?>" class="ace ace-checkbox-2" type="checkbox" <?php if (set_value('kdproduk[]')) echo 'checked' ?> />
                                                 </label>
                                             </td>
                                             <td><?= $kdproduk->kode_produk ?></td>
