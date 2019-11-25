@@ -10,22 +10,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-bar-chart"></i> Flat Admin</a>
+                <a class="navbar-brand" href="#"><i class="fa fa-bar-chart"></i> ASTRINDO PROD</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Emily Hart <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= loginAs($_SESSION['userId'])->username ?><span class="caret"></span></a>
                     <ul class="dropdown-menu user-info">
                         <li class="dropdown-title-bar">
-                            <img src="images/profile.jpg" class="profile-img">
+                            <img src="<?= base_url('assets/images/profile.jpg') ?>" class="profile-img">
                         </li>
                         <li>
                             <div class="navbar-login">
-                                <h4 class="user-name">Emily Hart</h4>
-                                <p>emily_hart@email.com</p>
+                                <h4 class="user-name"><?= loginAs($_SESSION['userId'])->username ?></h4>
+                                <p><?= loginAs($_SESSION['userId'])->email ?> </p>
                                 <div class="btn-group margin-bottom-2x" role="group">
-                                    <button type="button" class="btn btn-default"><i class="fa fa-user"></i> <a href="<?= site_url('profile') ?>">Profile</a></button>
+                                    <button type="button" class="btn btn-default"><i class="fa fa-user"></i> <a href="<?= site_url('home') ?>">Profile</a></button>
                                     <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> <a href="<?= site_url('logout') ?>">Logout</a></button>
                                 </div>
                             </div>
