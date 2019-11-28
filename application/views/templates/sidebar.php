@@ -16,7 +16,7 @@
         <li class="submenu">
             <a href="<?= site_url('user'); ?>">
                 <div>
-                    <i class="menu-icon fa fa-desktop"></i>
+                    <i class="menu-icon fa fa-users"></i>
                     <span class="menu-title">User</span>
                 </div>
             </a>
@@ -43,6 +43,15 @@
                 <div>
                     <i class="menu-icon fa fa-file-text-o"></i>
                     <span class="menu-title">Event</span>
+                </div>
+            </a>
+        </li>
+
+        <li class="submenu">
+            <a href="<?= site_url('request'); ?>">
+                <div>
+                    <i class="menu-icon fa fa-file-text-o"></i>
+                    <span class="menu-title">Request</span>
                 </div>
             </a>
         </li>

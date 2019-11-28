@@ -83,7 +83,7 @@
                             <br>
                             <div class="form-group pull-right">
                                 <button type="submit" class="btn btn-info">Submit</button>
-                                <button type="submit" class="btn btn-warning">Back</button>
+                                <a href="<?= site_url('user'); ?>" type="submit" class="btn btn-warning">Back</a>
                             </div>
                         </div>
                     </div>

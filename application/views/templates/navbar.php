@@ -1,6 +1,5 @@
 <nav class="navbar navbar-default">
     <div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="navbar-header">
@@ -10,9 +9,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-dashboard"></i> AMS | PROD</a>
+                <a class="navbar-brand" href="#"><i class="menu-icon fa-battle-net"></i> AMS | PROD</a>
             </div>
+
             <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown notification-alert">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-exclamation-circle"></i> <?= notifikasi(); ?></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-title-bar">
+                            Notification ( 3 )
+                        </li>
+                        <li>
+                            <ul class="notification-list">
+                                <?php foreach (shownotifikasi() as $snotif) : ?>
+                                    <li>
+                                        <a href="<?= site_url('diskusi-show/' . $snotif->id_diskusi); ?>">
+                                            <div class="noti-icon noti-alert">
+                                                <i class="fa fa-exclamation-circle fa-2x"></i>
+                                            </div>
+                                            <div class="noti-message"><?= $snotif->nama_produk; ?></div>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= loginAs($_SESSION['userId'])->username ?><span class="caret"></span></a>

@@ -11,10 +11,11 @@
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
-                                <th>Nama Event</th>
-                                <th>Dateline</th>
-                                <th>Tanggal Dibuat</th>
-                                <th>Keterangan</th>
+                                <th class="text-justifly">Nama Event</th>
+                                <th class="text-center">Dateline</th>
+                                <th class="text-center">Tanggal Dibuat</th>
+                                <th class="text-center">Status REQUEST</th>
+                                <th class="text-center">Keterangan</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -25,11 +26,12 @@
                                 $i++; ?>
                                 <tr>
                                     <td class="text-center"><?= $i; ?> </td>
-                                    <td><?= $dt->nama_event ?></td>
-                                    <td><?= date('d-m-Y', strtotime($dt->date_dateline)) ?></td>
-                                    <td><?= $dt->date_created_request; ?></td>
-                                    <td><?= $dt->keterangan; ?></td>
-                                    <td>
+                                    <td class="text-justifly"><?= $dt->nama_event ?></td>
+                                    <td class="text-center"><?= date('d-m-Y', strtotime($dt->date_dateline)) ?></td>
+                                    <td class="text-center"><?= $dt->date_created_request; ?></td>
+                                    <td class="text-center"><?= $dt->status_request; ?></td>
+                                    <td class="text-center"><?= $dt->keterangan; ?></td>
+                                    <td class="text-center">
                                         <a href="<?= site_url('request-edit/' . $dt->id_request) ?> " class="btn btn-xs btn-warning">edit</a>
                                         <a href="<?= site_url('request-delete/' . $dt->id_request) ?> " class="btn btn-xs btn-danger">delete</a>
                                     </td>

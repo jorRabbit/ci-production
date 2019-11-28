@@ -25,6 +25,7 @@ $route['request']                  = 'RequestController/index';
 $route['request-add']              = 'RequestController/add';
 $route['request-edit/(:num)']      = 'RequestController/edit/$1';
 $route['request-delete/(:num)']    = 'RequestController/delete/$1';
+$route['request-approved/(:num)']  = 'RequestController/approved/$1';
 
 $route['request-child-delete/(:num)']    = 'RequestController/deletechild/$1';
 
@@ -34,9 +35,11 @@ $route['product-edit/(:num)']      = 'ProductController/edit/$1';
 $route['product-delete/(:num)']    = 'ProductController/delete/$1';
 
 $route['diskusi']                  = 'DiskusiController/index';
-$route['diskusi-add']              = 'DiskusiController/add';
-$route['diskusi-edit/(:num)']      = 'DiskusiController/edit/$1';
+$route['diskusi-add/(:num)/(:num)']       = 'DiskusiController/add/$1/$2';
+$route['diskusi-show/(:num)']      = 'DiskusiController/show/$1';
 $route['diskusi-delete/(:num)']    = 'DiskusiController/delete/$1';
+$route['diskusi-done/(:num)']      = 'DiskusiController/done/$1';
+
 
 
 $route['default_controller']    = 'AuthController';

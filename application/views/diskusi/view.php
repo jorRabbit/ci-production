@@ -10,11 +10,11 @@
                     <table id="example" class="table table-striped" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th>ID REQ</th>
-                                <th>Nama Produk</th>
-                                <th>Status</th>
-                                <th>Last Update</th>
+
+                                <th class="text-center">ID REQ</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Last Update</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -24,13 +24,13 @@
                             foreach ($data as $dt) :
                                 $i++; ?>
                                 <tr>
-                                    <td class="text-center"> </td>
-                                    <td><?= $dt->id_request_child; ?></td>
-                                    <td><?= $dt->nama_produk; ?></td>
-                                    <td><?= $dt->status_diskusi; ?></td>
-                                    <td><?= $dt->date_update_diskusi; ?></td>
+
+                                    <td class="text-center"><?= $dt->id_request_child; ?></td>
+                                    <td class="text-center"><?= $dt->nama_produk; ?></td>
+                                    <td class="text-center"><?= $dt->status_diskusi; ?></td>
+                                    <td class="text-center"><?= $dt->date_update_diskusi; ?></td>
                                     <td>
-                                        <a href="" class="btn btn-xs btn-warning">Lihat</a>
+                                        <a href="<?= site_url('diskusi-show/' . $dt->id_diskusi); ?>" class="btn btn-xs btn-warning">Lihat</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

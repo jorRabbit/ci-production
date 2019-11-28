@@ -56,6 +56,12 @@ class Flashdata extends CI_Model
           return $isi;
      }
 
+     public function fotoFailedFlash()
+     {
+          $isi = '<div class="alert alert-danger" role="alert"><i class="fa fa-close"></i> Gagal dikirim...!! Foto Gak boleh kosong bray!! <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+          return $isi;
+     }
+
      public function ktpfailedFlash()
      {
           $isi = '<div class="alert alert-danger" role="alert"><i class="fa fa-close"></i> <small>KTP/Email tidak sesuai...!!</small> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';

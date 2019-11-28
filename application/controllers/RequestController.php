@@ -8,6 +8,7 @@ class RequestController extends MY_Controller
         parent::__construct();
         $this->loggedIn();
         $this->load->model('Request');
+        $this->load->model('Diskusi');
         $this->load->model('Flashdata', 'flash');
     }
 
@@ -105,6 +106,7 @@ class RequestController extends MY_Controller
                 'data'        => $this->Request->find($id)->first_row(),
                 'idevent'   => $this->db->order_by('id_event', 'ASC')->get('tb_event')->result(), // mengambil data dari tabel level urutkan dari nama level terkecil(ASC)
                 'datachild' => $this->Request->viewchild($id)->result(),
+                'diskusi' => $this->Request->viewdiskusichild($id)->result(),
                 'content'    => 'request/edit',
             );
             $this->theme($dt);
@@ -142,6 +144,18 @@ class RequestController extends MY_Controller
         } else {
             $this->session->set_flashdata('notif', $this->flash->failedFlash());
             redirect($_SERVER['HTTP_REFERER']);
+        }
+    }
+
+    public function approved($id)
+    {
+        $approved = $this->Request->approved($id);
+        if ($approved) {
+            $this->session->set_flashdata('notif', $this->flash->successFlash());
+            redirect('request-edit/' . $id);
+        } else {
+            $this->session->set_flashdata('notif', $this->flash->failedFlash());
+            redirect('request-edit/' . $id);
         }
     }
 }

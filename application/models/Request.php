@@ -20,6 +20,15 @@ class Request extends CI_Model
         return $this->db->get_where('tb_request_child', array('id_request' => $id));
     }
 
+    function viewdiskusichild($id)
+    {
+        $this->db->join('tb_produk', 'tb_request_child.kode_produk = tb_produk.kode_produk');
+        $this->db->join('tb_diskusi', 'tb_request_child.id_request_child = tb_diskusi.id_request_child');
+        $this->db->order_by('tb_request_child.id_request_child', 'ASC');
+        return $this->db->get_where('tb_request_child', array('id_request' => $id));
+    }
+
+
     function add()
     {
         $dtarray = array(
@@ -76,5 +85,16 @@ class Request extends CI_Model
     {
         $this->db->where('id_request_child', $id);
         return $this->db->delete($this->_tbc);
+    }
+
+
+    function approved($id)
+    {
+        date_default_timezone_set("Asia/Jakarta");
+        $dtarray = array(
+            'status_request' => 'Y',
+        );
+        $this->db->where('id_request', $id);
+        return $this->db->update($this->_tb, $dtarray);
     }
 }
