@@ -13,19 +13,45 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
+
                 <li class="dropdown notification-alert">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-exclamation-circle"></i> <?= notifikasi(); ?></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-exclamation-circle"></i> <?= reqnotif(); ?></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-title-bar">
-                            Notification ( 3 )
+                            Notification ( <?= reqnotif(); ?> )
+                        </li>
+                        <li>
+                            <ul class="notification-list">
+                                <?php foreach (showreqnotif() as $sreqnotif) : ?>
+                                    <li>
+                                        <a href="<?= site_url('request-edit/' . $sreqnotif->id_request); ?>">
+                                            <div class="noti-icon noti-alert">
+                                                <i class="fa fa-exclamation-circle fa-2x"></i>
+                                            </div>
+                                            <div class="noti-message">
+                                                <?= date('d-m-Y', strtotime($sreqnotif->date_dateline)); ?>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa fa-comments"></i> <?= notifikasi(); ?></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-title-bar">
+                            Notification ( <?= notifikasi(); ?> )
                         </li>
                         <li>
                             <ul class="notification-list">
                                 <?php foreach (shownotifikasi() as $snotif) : ?>
                                     <li>
                                         <a href="<?= site_url('diskusi-show/' . $snotif->id_diskusi); ?>">
-                                            <div class="noti-icon noti-alert">
-                                                <i class="fa fa-exclamation-circle fa-2x"></i>
+                                            <div class="noti-icon noti-primary">
+                                                <i class="fa fa-comments fa-2x"></i>
                                             </div>
                                             <div class="noti-message"><?= $snotif->nama_produk; ?></div>
                                         </a>

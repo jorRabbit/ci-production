@@ -36,6 +36,20 @@ function shownotifikasi()
     return $CI->db->get_where('tb_diskusi', array('status_diskusi' => 'W'))->result();
 }
 
+function reqnotif()
+{
+    $CI = get_instance();
+    return $CI->db->get_where('tb_request', array('status_request' => 'W'))->num_rows();
+}
+
+function showreqnotif()
+{
+    $CI = get_instance();
+    $CI->db->join('tb_event', 'tb_request.id_event = tb_event.id_event');
+    $CI->db->order_by('date_dateline', 'ASC');
+    return $CI->db->get_where('tb_request', array('status_request' => 'W'))->result();
+}
+
 function checkdiskusi($id)
 {
     $CI = get_instance();
