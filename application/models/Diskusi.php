@@ -13,10 +13,10 @@ class Diskusi extends CI_Model
         return $this->db->get($this->_tb);
     }
 
-    function showchild()
+    function showchild($id)
     {
         $this->db->order_by('id_diskusi_child', 'DESC');
-        return $this->db->get_where($this->_tbc);
+        return $this->db->get_where($this->_tbc, array('id_diskusi' => $id));
     }
 
 

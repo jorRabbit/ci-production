@@ -11,7 +11,7 @@ body.flat-blue {
 
 /* SideBar */
 .flat-blue .sidebar {
-	background-color: #F64747;
+	background-color: rgb(16, 150, 212);
 	border-right: 1px solid #EEEEEE;
 }
 

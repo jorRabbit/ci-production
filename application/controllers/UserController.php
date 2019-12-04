@@ -78,8 +78,9 @@ class UserController extends MY_Controller
 
     public function index()
     {
+        $this->getAkses('user_view');
         $dt = array(
-            'grup'      => 'Hone', 'menu' => 'Home', 'sub' => 'View',
+            'grup'      => 'User', 'menu' => 'User', 'sub' => 'View',
             'data'      => $this->User->view()->result(),
             'content'    => 'user/view',
         );
@@ -112,6 +113,9 @@ class UserController extends MY_Controller
 
     public function edit($id)
     {
+        $this->getAkses('user_edit');
+        $this->findtoFalse('tbu_user', 'id_user', $id);
+
         $this->form_validation->set_rules($this->rules('2'));
 
         if ($this->form_validation->run() === false) {

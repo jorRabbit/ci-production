@@ -41,3 +41,14 @@ function checkdiskusi($id)
     $CI = get_instance();
     return $CI->db->get_where('tb_diskusi', array('id_request_child' => $id))->num_rows();
 }
+
+function menu($field)
+{
+    $CI = get_instance();
+    $wrarray = array(
+        'kode_level' => $_SESSION['level'],
+        $field => 'Y'
+    );
+
+    return $CI->db->get_where('tbu_level', $wrarray)->num_rows();
+}

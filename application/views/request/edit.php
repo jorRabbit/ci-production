@@ -43,7 +43,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Dateline</label>
+                                <label>Deadline</label>
                                 <div class="input-group date">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
@@ -94,11 +94,13 @@
                 </div>
                 <div class="block-footer">
                     <div class="form-group">
+                        <!-- /.Hide Status Approved -->
+                        <?php if (menu('request_approved')) : ?>
 
-                        <?php if ($data->status_request == 'W') : ?>
-                            <a href="<?= site_url('request-approved/' . $data->id_request); ?>" class="btn btn-warning">Approved</a>
+                            <?php if ($data->status_request == 'W') : ?>
+                                <a href="<?= site_url('request-approved/' . $data->id_request); ?>" class="btn btn-warning">Approved</a>
+                            <?php endif; ?>
                         <?php endif; ?>
-
 
                         <a href="<?= site_url('request'); ?>" type="submit" class="btn btn-primary">Back</a>
                     </div>
@@ -139,7 +141,7 @@
                                 <tr>
 
                                     <td class="text-center"><?= $dt->id_request_child; ?></td>
-                                    <td class="text-center"><?= $dt->nama_produk; ?></td>
+                                    <td class="text-center"><?= $dt->kode_produk; ?></td>
                                     <td class="text-center"><?= $dt->status_diskusi; ?></td>
                                     <td class="text-center"><?= $dt->date_update_diskusi; ?></td>
                                     <td>
@@ -167,4 +169,4 @@
             autoclose: true
         });
     })
-</script>s
+</script>

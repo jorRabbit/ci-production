@@ -12,7 +12,7 @@
                             <tr>
                                 <th class="text-center">No</th>
                                 <th class="text-justifly">Nama Event</th>
-                                <th class="text-center">Dateline</th>
+                                <th class="text-center">Deadline</th>
                                 <th class="text-center">Tanggal Dibuat</th>
                                 <th class="text-center">Status REQUEST</th>
                                 <th class="text-center">Keterangan</th>

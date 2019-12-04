@@ -11,12 +11,7 @@
         <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <?php foreach (showreqchild($data->id_request) as $rqc) : ?>
-                        <?php if (validdiskusichild($data->id_request_child)) : ?>
-                            <?= $rqc->kode_produk; ?>
-                            <hr />
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                    <?= $data->kode_produk; ?>
                 </div>
             </div>
         </div>

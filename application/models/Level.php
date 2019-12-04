@@ -71,9 +71,6 @@ class Level extends CI_Model
     {
         date_default_timezone_set("Asia/Jakarta");
         $dtarray = array(
-            'nama_level'            => $this->input->post('namalevel'),
-            'kode_level'            => $this->input->post('kodelevel'),
-
             'date_update_level'     => $this->input->post('dateupdatelevel'),
 
             'user_insert'           => $this->input->post('userinsert'),
@@ -85,6 +82,7 @@ class Level extends CI_Model
             'request_view'          => $this->input->post('requestview'),
             'request_edit'          => $this->input->post('requestedit'),
             'request_delete'        => $this->input->post('requestdelete'),
+            'request_approved'        => $this->input->post('requestappv'),
 
             'level_insert'          => $this->input->post('levelinsert'),
             'level_view'            => $this->input->post('levelview'),

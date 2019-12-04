@@ -54,6 +54,7 @@ class AuthController extends CI_Controller
             $auth = $this->auth->getUser('username', $this->input->post('username'));
 
             $_SESSION['userId']     = $auth['id_user'];
+            $_SESSION['level']     = $auth['kode_level'];
             $_SESSION['loggedIn']   = true;
 
             redirect('home');

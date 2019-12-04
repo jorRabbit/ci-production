@@ -13,4 +13,29 @@ class MY_Controller extends CI_Controller
     {
         $this->load->view('templates/theme', $dt);
     }
+
+    public function findtoFalse($tb, $key, $val)
+    {
+
+        if (empty($this->db->get_where($tb, array($key => $val))->num_rows())) {
+            redirect('home');
+            return false;
+        }
+        return true;
+    }
+
+    public function getAkses($field)
+    {
+        $wrarray = array(
+            'kode_level' => $_SESSION['level'],
+            $field => 'Y'
+        );
+        $akses = $this->db->get_where('tbu_level', $wrarray);
+        if (empty($akses)) {
+            redirect('home');
+            return false;
+        }
+
+        return true;
+    }
 }

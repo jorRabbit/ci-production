@@ -61,7 +61,7 @@ class RequestController extends MY_Controller
     public function index()
     {
         $dt = array(
-            'grup'      => 'Hone', 'menu' => 'Home', 'sub' => 'View',
+            'grup'      => 'Home', 'menu' => 'Home', 'sub' => 'View',
             'data'      => $this->Request->view()->result(),
             'content'    => 'request/view',
         );

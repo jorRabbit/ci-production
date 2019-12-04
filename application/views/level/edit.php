@@ -25,8 +25,10 @@
                         <input type="text" class="form-control" id="datecreated" value="<?= date('d-M-Y h:i:s'); ?>" readonly>
                     </div>
 
-                    <!-- User -->
+
                     <div class="container-fluid">
+
+                        <!-- User -->
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                 <div class="form-group">
@@ -143,7 +145,23 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="form-group">
+                                    <label for="requestappv">Request Approve</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="requestappv" id="requestappv" value="Y" <?php if ($data->request_approved == 'Y') echo 'checked' ?> />
+                                        <label class="form-check-label" for="requestappv">
+                                            Yes
+                                        </label>
+                                        <input class="form-check-input" type="radio" name="requestappv" id="requestappv" value="N" <?php if ($data->request_approved == 'N') echo 'checked' ?> />
+                                        <label class="form-check-label" for="requestappv">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                 <div class="form-group">
                                     <label for="requestdelete">Request Delete</label>
                                     <div class="form-check">
@@ -158,6 +176,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- Level -->

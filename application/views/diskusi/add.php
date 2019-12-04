@@ -71,51 +71,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Leo <i>as Admin</i></h3>
-                        </div>
-                        <div class="panel-body">
-                            <p>
-                                <i>This is subject koment</i>
-                            </p>
-                            <p>
-                                This is subject koment This is subject koment This is subject koment This is subject koment
-                            </p>
-                            <p>
-                                <img src="images/profile.jpg" class="profile-img" width="20px" width="20px">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Ilham <i>as Customer</i></h3>
-                        </div>
-                        <div class="panel-body">
-                            <p>
-                                <i>This is subject koment</i>
-                            </p>
-                            <p>
-                                This is subject koment This is subject koment This is subject koment This is subject koment
-                            </p>
-                            <p>
-                                <img src="images/profile.jpg" class="profile-img" width="20px" width="20px">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-
-
         </div>
-
-
-
     </div>
 </div>

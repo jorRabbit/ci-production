@@ -4,7 +4,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="content-block">
                 <div class="block-title">
-                    <h4>FORUM DISKUSI<a href="<?= site_url('diskusi'); ?>" class=" btn btn-xs btn-info pull-right">Tambah Data</h4></a>
+                    <h4>FORUM DISKUSI<a href="<?= site_url('diskusi'); ?>"></h4></a>
                 </div>
                 <div class="block-content">
                     <table id="example" class="table table-striped" cellspacing="0" width="100%">

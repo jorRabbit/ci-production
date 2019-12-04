@@ -30,11 +30,11 @@ class LevelController extends MY_Controller
             ];
         } elseif ($q == '2') {
             return [
-                [
-                    'field' => 'namalevel',
-                    'label' => 'namalevel',
-                    'rules' => 'required|max_length[36]|is_unique[tbu_level.nama_level]'
-                ],
+                // [
+                //     'field' => 'namalevel',
+                //     'label' => 'namalevel',
+                //     'rules' => 'required|max_length[36]|is_unique[tbu_level.nama_level]'
+                // ],
 
                 [
                     'field' => 'userinsert',

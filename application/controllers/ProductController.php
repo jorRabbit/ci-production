@@ -102,10 +102,10 @@ class ProductController extends MY_Controller
         $delete = $this->Product->delete($id);
         if ($delete) {
             $this->session->set_flashdata('notif', $this->flash->successFlash());
-            redirect('produk');
+            redirect('product');
         } else {
             $this->session->set_flashdata('notif', $this->flash->failedFlash());
-            redirect('produk');
+            redirect('product');
         }
     }
 }
